@@ -10,13 +10,14 @@
   color: #ddd;
   height: 100vh;
   padding: 3% 10% 0;
+  position: relative;
   width: 100%;
 }
 
 #header-nav {
   display: flex;
   justify-content: space-between;
-  padding: 2% 0;
+  padding: 20px 0;
   .links {
     display: flex;
     .n-li {
@@ -31,7 +32,10 @@
 }
 
 #headline {
-  margin: 12% auto 0;
+  position: absolute;
   text-align: center;
+  left: 10%;
+  right: 10%;
+  top: 30%;
   .headline-h { padding-bottom: 35px; }
 }
