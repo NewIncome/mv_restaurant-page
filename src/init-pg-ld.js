@@ -1,11 +1,11 @@
 // === DOM code to make te inital page view ===
 console.log("in 2nd file");
 
+// ----- Factory Function to make DOM elements -----
 function crtDOM(type) {
   dom = document.createElement(type)
-  const mkChild = (parent) => { document.getElementById(parent).appendChild(dom) }
+  const mkChild = (parent) => { document.querySelector(parent).appendChild(dom) }
   const addAttribute = (att, val) => { dom.setAttribute(att, val) }
-  // const addText = (text) => { dom.innerHTML = text }
   const mkChildNattribute = (parent, att, val) => {
     mkChild(parent)
     addAttribute(att, val)
@@ -14,25 +14,21 @@ function crtDOM(type) {
     mkChildNattribute(parent, att, val)
     dom.innerHTML = txt
   }
-  // const crtClass = (type) => { console.log(`Is this the class: ${type}`) }
 
-  return { mkChildNattribute, mkChildNattNtext, dom }
+  return { mkChildNattribute, mkChildNattNtext }
 };
 
-let div1 = crtDOM('div');
-div1.mkChildNattNtext('content', 'class', 'test', 'adding text');
-// div1.mkChildNattNtext('content', 'test', 'adding text');
-let div2 = crtDOM('div');
-div1.mkChildNattribute ('content', 'id', 'test');
-console.log(div1, div2);
+// Make the DOM elements from the crtDOM Factory Function
+const nav = crtDOM('nav').mkChildNattribute('#content', 'id', 'header-nav');
+const navLogo = crtDOM('div').mkChildNattNtext('#header-nav', 'class', 'logo', 'Baratie');
+const navUL = crtDOM('ul').mkChildNattribute('#header-nav', 'class', 'links');
+['Home', 'Menu', 'Contact'].forEach(e => crtDOM('li').mkChildNattNtext('.links', 'class', 'n-li', e));
+const headline = crtDOM('div').mkChildNattribute('#content', 'id', 'headline');
+const hlH2 = crtDOM('h2').mkChildNattNtext('#headline', 'class', 'headline-h', 'The best restaurant in town');
+const hlP = crtDOM('p').mkChildNattNtext('#headline', 'class', 'headline-p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.');
 
-// // Factory Function  ;  for multiple occurrences
-// const personFactory = (name, age) => {
-//   const sayHello = () => console.log('hello!');
-//   return { name, age, sayHello };
-// };
-//
-// const jeff = personFactory('jeff', 27);
+
+
 
 // // Module Pattern  ;  for 1 occurrence
 // const calculator = (() => {
@@ -43,17 +39,3 @@ console.log(div1, div2);
 // })();
 //
 // calculator.add(3,5) // 8
-
-
-
-// // TEST
-// const createUser = ({ userName, avatar }) => ({
-//   userName,
-//   avatar,
-//   setUserName (userName) {
-//     this.userName = userName;
-//     return this;
-//   }
-// });
-// let user = createUser({ userName: 'echo', avatar: 'echo.png' });
-// console.log(user);
