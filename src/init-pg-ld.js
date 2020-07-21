@@ -20,9 +20,12 @@ function crtDOM(type) {
 
 // Make the DOM elements from the crtDOM Factory Function
 function initPageLoad() {
-  const nav = crtDOM('nav').mkChildNattribute('#content', 'id', 'header-nav');
-  const navLogo = crtDOM('div').mkChildNattNtext('#header-nav', 'class', 'logo', 'Baratie');
-  const navUL = crtDOM('ul').mkChildNattribute('#header-nav', 'class', 'links');
+  const nav = crtDOM('nav');
+  nav.mkChildNattribute('#content', 'id', 'header-nav');
+  const navLogo = crtDOM('div');
+  navLogo.mkChildNattNtext('#header-nav', 'class', 'logo', 'Baratie');
+  const navUL = crtDOM('ul');
+  navUL.mkChildNattribute('#header-nav', 'class', 'links');
   ['Home', 'Menu', 'Contact'].forEach((e, i) => {
     eval(`let nli${i}` + '=' + crtDOM('li').mkChildNattribute('.links', 'class', `n-li nli-${i}`));
     window['link2' + e] = crtDOM('a');
