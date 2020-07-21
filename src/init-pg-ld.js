@@ -21,8 +21,11 @@ function crtDOM(type) {
 const initPageLoad = (() => {
   const nav = crtDOM('nav');
   nav.mkChildNattribute('#content', 'id', 'header-nav');
-  const navLogo = crtDOM('div');
-  navLogo.mkChildNattNtext('#header-nav', 'class', 'logo', 'Baratie');
+  // const navLogo = crtDOM('div');
+  // navLogo.mkChildNattNtext('#header-nav', 'class', 'logo', 'Baratie');
+  const navLogo = crtDOM('img');
+  navLogo.mkChildNattribute('#header-nav', 'class', 'logo');
+  navLogo.addAttribute('src', 'https://1.bp.blogspot.com/-4rjqYmbQTks/T9fTbFQvmTI/AAAAAAAAAGY/j3cL0PoqBhw/s300/logoba.png')
   const navUL = crtDOM('ul');
   navUL.mkChildNattribute('#header-nav', 'class', 'links');
   ['Home', 'Menu', 'Contact'].forEach((e, i) => {

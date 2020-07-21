@@ -19,6 +19,7 @@
   font-weight: bold;
   justify-content: space-between;
   padding: 20px 0;
+  .logo { width: 100px; }
 }
 
 .links {
@@ -26,7 +27,7 @@
   &, .menuLinks {
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 15px;
+    align-items: center;
   }
   .n-li {
     list-style: none;
