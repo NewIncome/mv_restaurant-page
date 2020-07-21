@@ -16,17 +16,25 @@
 
 #header-nav {
   display: flex;
+  font-weight: bold;
   justify-content: space-between;
   padding: 20px 0;
-  .links {
-    display: flex;
-    .n-li {
-      list-style: none;
-      padding: 0 10px;
-      .n-link {
-        color: #ddd;
-        text-decoration: none;
-      }
+}
+
+.links {
+  display: flex;
+  &, .menuLinks {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  .n-li {
+    list-style: none;
+    padding: 0 10px;
+    &, .menu-li { margin-bottom: 5px; }
+    .n-link {
+      color: #ddd;
+      text-decoration: none;
     }
   }
 }

@@ -25,7 +25,34 @@ const contact = (() => {
 
 // ----- Module for Menu-Tab content -----
 const menu = (() => {
+  function init() {
+    erase.hLine();
+    const headline = crtDOM('div').mkChildNattribute('#content', 'id', 'headline');
+    const hlH2 = crtDOM('h2').mkChildNattNtext('#headline', 'class', 'headline-h', 'Here is our weekly menu:');
+    const menuUL = crtDOM('ul').mkChildNattribute('#headline', 'class', 'links menuLinks');
+    const menuBttns = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    menuBttns.forEach((day, i) => {
+      window[`menuLi${i}`] = crtDOM('li');
+      eval('menuLi'+ i).mkChildNattribute('.menuLinks', 'class', `n-li menu-li menuLi-${i}`);
+      window['day' + day] = crtDOM('a');
+      eval('day' + day).mkChildNattNtext(`.menuLi-${i}`, 'class', `n-link menu-a-${i}`, day);
+      eval('day' + day).dom.setAttribute('href', '#');
+    });
+    const hlP = crtDOM('p').mkChildNattNtext('#headline', 'class', 'headline-p', 'Please pick a day');
+  };
+  function monday() {
+    const headline = crtDOM('div').mkChildNattribute('#content', 'id', 'headline');
+    const hlH2 = crtDOM('h2')
+                  .mkChildNattNtext('#headline', 'class', 'headline-h', 'Monday');
+    const hlP = crtDOM('p').mkChildNattNtext('#headline', 'class', 'headline-p', `
+          <li>Soup</li>
+          <li>Salad</li>
+          <li>Entré</li>
+          <li>Dessert</li>
+    `);
+  }
 
+  return { init, monday }
 })();
 
-export { erase, contact }
+export { erase, contact, menu }
