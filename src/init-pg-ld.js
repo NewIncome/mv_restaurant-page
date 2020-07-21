@@ -1,5 +1,4 @@
 // === DOM code to make te inital page view ===
-console.log("in 2nd file");
 
 // ----- Factory Function to make DOM elements -----
 function crtDOM(type) {
@@ -31,26 +30,21 @@ const initPageLoad = (() => {
     eval('nli'+ i).mkChildNattribute('.links', 'class', `n-li nli-${i}`);
     window['link2' + e] = crtDOM('a');
     eval('link2' + e).mkChildNattNtext(`.nli-${i}`, 'class', `n-link n-a-${i}`, e);
-    eval('link2' + e).dom.setAttribute('href', '#') });
-  const headline = crtDOM('div');
-  headline.mkChildNattribute('#content', 'id', 'headline');
-  const hlH2 = crtDOM('h2');
-  hlH2.mkChildNattNtext('#headline', 'class', 'headline-h', 'The best restaurant in town');
-  const hlP = crtDOM('p');
-  hlP.mkChildNattNtext('#headline', 'class', 'headline-p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.');
-  const vars = [nav, navLogo, headline, headline, hlH2, hlP];
+    eval('link2' + e).dom.setAttribute('href', '#');
+  });
+  const theHome = () => {
+    const headline = crtDOM('div');
+    headline.mkChildNattribute('#content', 'id', 'headline');
+    const hlH2 = crtDOM('h2');
+    hlH2.mkChildNattNtext('#headline', 'class', 'headline-h', 'The best restaurant in town');
+    const hlP = crtDOM('p');
+    hlP.mkChildNattNtext('#headline', 'class', 'headline-p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.');
 
-  return { vars }
+    return { headline, hlH2, hlP }
+  };
+  const vars = [nav, navLogo, theHome() ];
+
+  return { theHome, vars }
 })();
 
-// export { crtDOM, initPageLoad }
-
-// // Module Pattern  ;  for 1 occurrence
-// const calculator = (() => {
-//   const add = (a, b) => a + b;
-//   return {
-//     add,
-//   };
-// })();
-//
-// calculator.add(3,5) // 8
+export { crtDOM, initPageLoad }

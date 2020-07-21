@@ -1,20 +1,20 @@
-// import { crtDOM } from './init-pg-ld.js';
-
-// === DOM code to make te inital page view ===
-console.log("in 3rd file");
+import { crtDOM } from './init-pg-ld.js';
 
 // ----- Module for Erase-Tab content -----
 const erase = (() => {
-  // function elem(e){document.querySelector(`${e}`)}; // UNKNOWN ISSUE !!!
-  const htmlElem = (e) => { e.remove() };
+  const elem = (e) => { e.remove() };
+  const hLine = () => {
+    let domElem = document.querySelector('#headline');
+    erase.elem(domElem);
+  };
 
-  return { htmlElem }
+  return { elem, hLine }
 })();
 
 // ----- Module for Contact-Tab content -----
 const contact = (() => {
-  erase.htmlElem(initPageLoad.vars[3].dom);
   const makeContactTab = () => {
+    erase.hLine();
     const headline = crtDOM('div').mkChildNattribute('#content', 'id', 'headline');
     const hlH2 = crtDOM('h2').mkChildNattNtext('#headline', 'class', 'headline-h', 'Hungry? we\'re here for you!');
     const hlP = crtDOM('p').mkChildNattNtext('#headline', 'class', 'headline-p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.');
@@ -23,4 +23,9 @@ const contact = (() => {
   return { makeContactTab }
 })();
 
-// export { erase, contact }
+// ----- Module for Menu-Tab content -----
+const menu = (() => {
+
+})();
+
+export { erase, contact }
