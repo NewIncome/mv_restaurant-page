@@ -1,10 +1,12 @@
-import './style.scss';
-import { initPageLoad, crtDOM } from './init-pg-ld.js';
-import { erase, contact } from './tab-pages.js';
+// import './style.scss';
+// import { initPageLoad, crtDOM } from './init-pg-ld.js';
+// import { erase, contact } from './tab-pages.js';
 
 console.log('NPM and basic setup test; log message');
 
-initPageLoad();
+initPageLoad;
+
+console.log(initPageLoad.vars);
 
 link2Home.dom.addEventListener('click', function() { console.log('clicked home') });
 
