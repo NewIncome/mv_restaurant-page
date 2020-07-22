@@ -1,6 +1,13 @@
-['a', 'b', 'c'].forEach((e, i) => {
-  window[`variable_${e}`] = i;
-  // console.log(eval('variable_' + e));
-});
+import { initPageLoad } from './init-pg-ld';
 
-console.log(variable_a);
+// Module to add the movement to the cursor over the nav-links
+
+const move = (() => {
+  function zero() { initPageLoad.line.className = 'zero'; }
+  function one() { initPageLoad.line.className = 'one'; }
+  function two() { initPageLoad.line.className = 'two'; }
+
+  return { zero, one, two };
+})();
+
+export { move as default };
