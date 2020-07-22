@@ -25,7 +25,7 @@ const initPageLoad = (() => {
   // navLogo.mkChildNattNtext('#header-nav', 'class', 'logo', 'Baratie');
   const navLogo = crtDOM('img');
   navLogo.mkChildNattribute('#header-nav', 'class', 'logo');
-  navLogo.addAttribute('src', 'https://1.bp.blogspot.com/-4rjqYmbQTks/T9fTbFQvmTI/AAAAAAAAAGY/j3cL0PoqBhw/s300/logoba.png')
+  navLogo.addAttribute('src', '../src/logoBaratie.png')
   const navUL = crtDOM('ul');
   navUL.mkChildNattribute('#header-nav', 'class', 'links');
   ['Home', 'Menu', 'Contact'].forEach((e, i) => {

@@ -21,6 +21,7 @@
   "homepage": "https://github.com/NewIncome/mv_restaurant-page#readme",
   "devDependencies": {
     "css-loader": "^3.6.0",
+    "file-loader": "^6.0.0",
     "sass": "^1.26.10",
     "sass-loader": "^9.0.2",
     "style-loader": "^1.2.1",

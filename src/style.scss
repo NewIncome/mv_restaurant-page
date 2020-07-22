@@ -25,9 +25,10 @@
 .links {
   display: flex;
   &, .menuLinks {
+    align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    margin-bottom: 10px;
   }
   .n-li {
     list-style: none;
