@@ -1,5 +1,3 @@
 node_modules/
 .eslintrc.json
 .stylelintrc.json
-# Local Netlify folder
-.netlify
