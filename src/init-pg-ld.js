@@ -35,6 +35,9 @@ const initPageLoad = (() => {
     eval('link2' + e).mkChildNattNtext(`.nli-${i}`, 'class', `n-link n-a-${i}`, e);
     eval('link2' + e).dom.setAttribute('href', '#');
   });
+  const line = crtDOM('div');
+  line.mkChildNattribute('.links', 'id', 'line');
+  line.addAttribute('class', 'zero')
   const theHome = () => {
     const headline = crtDOM('div');
     headline.mkChildNattribute('#content', 'id', 'headline');
@@ -45,9 +48,9 @@ const initPageLoad = (() => {
 
     return { headline, hlH2, hlP }
   };
-  const vars = [nav, navLogo, theHome() ];
+  const vars = [nav, navLogo, theHome(), line ];
 
-  return { theHome, vars }
+  return { theHome, vars, line }
 })();
 
 export { crtDOM, initPageLoad }

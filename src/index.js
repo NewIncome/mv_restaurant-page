@@ -1,6 +1,7 @@
 import './style.scss';
 import { initPageLoad, crtDOM } from './init-pg-ld.js';
 import { erase, contact, menu } from './tab-pages.js';
+import { move } from './move.js';
 
 console.log('NPM and basic setup test; log message');
 
@@ -24,6 +25,10 @@ link2Menu.dom.addEventListener('click', function(){
     });
   });
 });
+
+nli0.dom.addEventListener('click', function(){ move.zero() });
+nli1.dom.addEventListener('click', function(){ move.one() });
+nli2.dom.addEventListener('click', function(){ move.two() });
 
 
 // Menu option events
