@@ -1,34 +1,37 @@
+/* eslint-disable import/named, no-undef, no-unused-expressions */
 import './style.scss';
-import { initPageLoad, crtDOM } from './init-pg-ld';
+import {
+  initPageLoad,
+  nli0,
+  nli1,
+  nli2,
+} from './init-pg-ld';
 import { erase, contact, menu } from './tab-pages';
 import move from './move';
 
-console.log('NPM and basic setup test; log message');
-
 initPageLoad;
 
-link2Home.dom.addEventListener('click', function(){ 
+link2Home.dom.addEventListener('click', () => {
   erase.pointedElm('#headline');
-  initPageLoad.theHome()
+  initPageLoad.theHome();
 });
 
-link2Contact.dom.addEventListener('click', function(){ contact.makeContactTab() });
+link2Contact.dom.addEventListener('click', () => { contact.makeContactTab(); });
 
-link2Menu.dom.addEventListener('click', function(){
+link2Menu.dom.addEventListener('click', () => {
   menu.init();
   // listen for clicks inside the Menu section
-  let menuDays = document.querySelectorAll('.menu-a');
+  const menuDays = document.querySelectorAll('.menu-a');
   menuDays.forEach(day => {
-    day.addEventListener('click', function(event){
-      console.log(event.target.getAttribute('data'));
+    day.addEventListener('click', (event) => {
       menu.days[event.target.getAttribute('data')]();
     });
   });
 });
 
-nli0.dom.addEventListener('click', function(){ move.zero() });
-nli1.dom.addEventListener('click', function(){ move.one() });
-nli2.dom.addEventListener('click', function(){ move.two() });
+nli0.dom.addEventListener('click', () => { move.zero(); });
+nli1.dom.addEventListener('click', () => { move.one(); });
+nli2.dom.addEventListener('click', () => { move.two(); });
 
 
 // Menu option events
