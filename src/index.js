@@ -1,11 +1,6 @@
 /* eslint-disable import/named, no-undef, no-unused-expressions */
 import './style.scss';
-import {
-  initPageLoad,
-  nli0,
-  nli1,
-  nli2,
-} from './init-pg-ld';
+import { initPageLoad } from './init-pg-ld';
 import { erase, contact, menu } from './tab-pages';
 import move from './move';
 
