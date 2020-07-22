@@ -7,7 +7,7 @@ console.log('NPM and basic setup test; log message');
 initPageLoad;
 
 link2Home.dom.addEventListener('click', function(){ 
-  erase.hLine();
+  erase.pointedElm('#headline');
   initPageLoad.theHome()
 });
 
@@ -20,7 +20,7 @@ link2Menu.dom.addEventListener('click', function(){
   menuDays.forEach(day => {
     day.addEventListener('click', function(event){
       console.log(event.target.getAttribute('data'));
-      menu.days[event.target.getAttribute('data')];
+      menu.days[event.target.getAttribute('data')]();
     });
   });
 });
