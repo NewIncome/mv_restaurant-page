@@ -1,13 +1,6 @@
-import { crtDOM, initPageLoad } from './init-pg-ld.js';
+['a', 'b', 'c'].forEach((e, i) => {
+  window[`variable_${e}`] = i;
+  // console.log(eval('variable_' + e));
+});
 
-// Module to add the movement to the cursor over the nav-links
-
-const move = (() => {
-  function zero() { line.className = 'zero'; };
-  function one() { line.className = 'one'; };
-  function two() { line.className = 'two'; };
-
-  return { zero, one, two }
-})();
-
-export { move }
+console.log(variable_a);
