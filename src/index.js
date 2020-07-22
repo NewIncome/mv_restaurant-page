@@ -1,7 +1,7 @@
 import './style.scss';
-import { initPageLoad, crtDOM } from './init-pg-ld.js';
-import { erase, contact, menu } from './tab-pages.js';
-import { move } from './move.js';
+import { initPageLoad, crtDOM } from './init-pg-ld';
+import { erase, contact, menu } from './tab-pages';
+import move from './move';
 
 console.log('NPM and basic setup test; log message');
 
