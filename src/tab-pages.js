@@ -30,7 +30,7 @@ const menu = (() => {
     erase.pointedElm('#headline');
     const headline = crtDOM('div').mkChildNattribute('#content', 'id', 'headline');
     const hlH2 = crtDOM('h2').mkChildNattNtext('#headline', 'class', 'headline-h', 'Here is our weekly menu:');
-    window['menuUL'] = crtDOM('ul').mkChildNattribute('#headline', 'class', 'links menuLinks');
+    const menuUL = crtDOM('ul').mkChildNattribute('#headline', 'class', 'links menuLinks');
     menuBttns.forEach((day, i) => {
       window[`menuLi${i}`] = crtDOM('li');
       eval('menuLi'+ i).mkChildNattribute('.menuLinks', 'class', `n-li menu-li menuLi-${i}`);
@@ -39,20 +39,28 @@ const menu = (() => {
       eval('day' + day).dom.setAttribute('href', '#');
       eval('day' + day).dom.setAttribute('data', i);
     });
-    const hlP = crtDOM('p').mkChildNattNtext('#headline', 'class', 'headline-p', 'Please pick a day');
+    const hlD = crtDOM('div').mkChildNattribute('#headline', 'id', 'headline-d');
+    const hlP = crtDOM('p').mkChildNattNtext('#headline-d', 'class', 'h-d-p', 'Please pick a day');
   };
-  function Monday() {
-    erase.pointedElm('.headline-p');
+  function weekday(day) {
+    erase.pointedElm('#headline-d');
+    const hlD = crtDOM('div').mkChildNattribute('#headline', 'id', 'headline-d');
     const hlH3 = crtDOM('h3')
-                  .mkChildNattNtext('#headline', 'class', 'headline-h', 'Monday');
-    const hlP = crtDOM('p').mkChildNattNtext('#headline', 'class', 'headline-p', `
-          <li>Soup</li>
-          <li>Salad</li>
-          <li>Entré</li>
-          <li>Dessert</li>
+                  .mkChildNattNtext('#headline-d', 'class', 'headline-h', day);
+    const hlP = crtDOM('p').mkChildNattNtext('#headline-d', 'class', 'headline-p', `
+          <li>${day} Soup</li>
+          <li>${day} Salad</li>
+          <li>${day} Entré</li>
+          <li>${day} Dessert</li>
     `);
   }
-  const days = [Monday];
+  function Monday() { weekday('Monday') };
+  function Tuesday() { weekday('Tuesday') };
+  function Wednesday() { weekday('Wednesday') };
+  function Thursday() { weekday('Thursday') };
+  function Friday() { weekday('Friday') };
+  function Saturday() { weekday('Saturday') };
+  const days = [Monday, Tuesday, Wednesday , Thursday, Friday, Saturday];
 
   return { init, Monday, menuBttns, days }
 })();

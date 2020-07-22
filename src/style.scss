@@ -1,8 +1,9 @@
 // Personal Style Normalize
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  text-align: center;
 }
 
 #content {
@@ -20,15 +21,15 @@
   justify-content: space-between;
   padding: 20px 0;
   .logo { width: 100px; }
+  .n-li { width: 90px; }
 }
-
+.menuLinks { margin-bottom: 10px; }
 .links {
   display: flex;
   &, .menuLinks {
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 10px;
   }
   .n-li {
     list-style: none;
@@ -43,9 +44,16 @@
 
 #headline {
   position: absolute;
-  text-align: center;
   left: 10%;
   right: 10%;
   top: 30%;
   .headline-h { padding-bottom: 35px; }
+  #headline-d {
+    background: linear-gradient(#e1cdb7b0, #ffffffd6);
+    border: 1px solid #fff;
+    color: #000;
+    margin: 20px auto 0;
+    padding: 12px 0 22px;
+    width: 80%;
+  }
 }
