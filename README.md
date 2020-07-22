@@ -13,7 +13,7 @@ This project has the purpose of building a restaurant page, with no initial html
 
 ## Live Demo
 
-[:globe_with_meridians::computer:](https://mv-restaurant-page.netlify.app)
+[:globe_with_meridians::computer:](https://newincome.github.io/mv_restaurant-page/)
 
 
 ## Getting Started
