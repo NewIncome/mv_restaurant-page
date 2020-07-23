@@ -1,27 +1,5 @@
-/* eslint-disable no-unused-vars, no-eval  */
-// === DOM code to make te inital page view ===
-
-// ----- Factory Function to make DOM elements -----
-function crtDOM(type) {
-  const dom = document.createElement(type);
-  const mkChild = (parent) => { document.querySelector(parent).appendChild(dom); };
-  const addAttribute = (att, val) => { dom.setAttribute(att, val); };
-  const mkChildNattribute = (parent, att, val) => {
-    mkChild(parent);
-    addAttribute(att, val);
-  };
-  const mkChildNattNtext = (parent, att, val, txt) => {
-    mkChildNattribute(parent, att, val);
-    dom.innerHTML = txt;
-  };
-
-  return {
-    mkChildNattribute,
-    mkChildNattNtext,
-    addAttribute,
-    dom,
-  };
-}
+/* eslint-disable no-eval */
+import { crtDOM } from './init-pg-ld';
 
 // Make the DOM elements from the crtDOM Module
 const initPageLoad = (() => {
@@ -59,4 +37,4 @@ const initPageLoad = (() => {
   return { theHome, vars, line };
 })();
 
-export { crtDOM, initPageLoad };
+export default initPageLoad;

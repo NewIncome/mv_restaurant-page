@@ -1,8 +1,10 @@
-/* eslint-disable import/named, no-undef, no-unused-expressions */
+/* eslint-disable no-undef, no-unused-expressions */
 import './style.scss';
-import { initPageLoad } from './init-pg-ld';
-import { erase, contact, menu } from './tab-pages';
-import move from './move';
+import initPageLoad from './js_assets/home';
+import contact from './js_assets/contact';
+import menu from './js_assets/menu';
+import { erase } from './js_assets/init-pg-ld';
+import move from './js_assets/move';
 
 initPageLoad;
 
@@ -27,7 +29,3 @@ link2Menu.dom.addEventListener('click', () => {
 nli0.dom.addEventListener('click', () => { move.zero(); });
 nli1.dom.addEventListener('click', () => { move.one(); });
 nli2.dom.addEventListener('click', () => { move.two(); });
-
-
-// Menu option events
-// link2Menu.dom.addEventListener('click', function(){ menu.init() });

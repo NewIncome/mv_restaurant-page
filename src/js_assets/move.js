@@ -1,4 +1,4 @@
-import { initPageLoad } from './init-pg-ld';
+import initPageLoad from './home';
 
 // Module to add the movement to the cursor over the nav-links
 
